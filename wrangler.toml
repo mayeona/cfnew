@@ -1,27 +1,10 @@
 # Worker 项目的名称
 name = "mandy"
 # Worker 项目的入口文件，Wrangler 会打包部署它
-main = "少年你相信光吗"
-
-# 定义一个生产环境(production)配置块
-# 可以为不同环境设置不同的 Worker 名称、KV、变量等。
-[env.production]
-# 在生产环境部署时，指定 Worker 的 name(也可与默认相同)，会覆盖默认的 name
-name = "mandy"
-
-# 定义预发布环境(staging)配置块
-[env.staging]
-name = "mandy-staging"
+main = "index.js"
 
 # 绑定 Cloudflare KV 存储
 [[kv_namespaces]]
 binding = "C"
-# 预览环境的 KV 命名空间 ID(staging/本地预览)
-# preview_id = ""
-# 生产环境的 KV 命名空间 ID
+# KV 命名空间 ID
 id = "635123f949cb400d8adad7a43bb5f1b1"
-
-# 设置 Worker 的全局环境变量，也就是用哪一套 env(production 或 staging)。可以在 Cloudflare Dashboard 或 wrangler 部署时覆盖
-# 可以在 Worker 脚本里通过 ENVIRONMENT 判断当前环境(production/staging)，实现同一脚本多环境适配
-[vars]
-ENVIRONMENT = "production"
