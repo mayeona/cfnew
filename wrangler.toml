@@ -2,6 +2,8 @@
 name = "mandy"
 # Worker 项目的入口文件，Wrangler 会打包部署它
 main = "index.js"
+# 兼容性日期是部署必须的
+compatibility_date = "2025-11-03"
 
 # 绑定 Cloudflare KV 存储
 [[kv_namespaces]]
