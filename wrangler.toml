@@ -5,6 +5,13 @@ main = "index.js"
 # 兼容性日期是部署必须的
 compatibility_date = "2025-11-03"
 
+[observability]
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
 # 绑定 Cloudflare KV 存储
 [[kv_namespaces]]
 binding = "C"
